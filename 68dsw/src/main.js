@@ -51,6 +51,8 @@ Vue.use(vuex);
 //     state,actions,mutations,getters
 // });
 
+// 注意：按需引入单个组件，另需导入重置基础样式；即在 main.js 或根组件执行 
+import 'vue-ydui/dist/ydui.base.css';
 
 new Vue({
     el:'#app',
