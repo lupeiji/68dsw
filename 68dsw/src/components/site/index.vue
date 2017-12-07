@@ -31,19 +31,9 @@
         <!--轮播图-->
         <div class="lbt">
             <yd-slider autoplay="4000" :loop="isTure" speed="600">
-                <yd-slider-item>
+                <yd-slider-item v-for="(item,index) in gImg" :key="index">
                     <a href="http://www.ydcss.com">
-                        <img src="http://static.ydcss.com/uploads/ydui/1.jpg">
-                    </a>
-                </yd-slider-item>
-                <yd-slider-item>
-                    <a href="http://www.ydcss.com">
-                        <img src="http://static.ydcss.com/uploads/ydui/2.jpg">
-                    </a>
-                </yd-slider-item>
-                <yd-slider-item>
-                    <a href="http://www.ydcss.com">
-                        <img src="http://static.ydcss.com/uploads/ydui/3.jpg">
+                        <img :src="item.src">
                     </a>
                 </yd-slider-item>
             </yd-slider>
@@ -551,15 +541,31 @@ export default {
             // isvipshow:false,
             // buycount:0
             hello: "我是hello",
-            isTure: false
+            isTure: false,
+            gImg:[],
         }
     },
     methods: {
+            // 获取lbt
+            getgLbtImg() {
+                var date=new Date();
+                var timer=date.getTime().toString();
+                this.$http.get('/src/json/img.json?t='+timer).then(res => {
+                    // 判断状态提示
 
+                    // 赋值
+                    this.gImg = res.data.lbtImg;
+                    console.log(1111111111);
+                    console.log(this.gImg);
+                });
+            },
     },
     mounted() {
 
-    }
+    },
+    created(){
+        this.getgLbtImg();
+    },
 }
 
 </script>

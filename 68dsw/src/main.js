@@ -28,7 +28,7 @@ var router = new vueRouter({
 // 2.0.1 导入axios包
 import axios from 'axios';
 // 2.0.2 设定axios的基本的url请求前缀
-axios.defaults.baseURL = '';
+// axios.defaults.baseURL = '';
 
 // 2.0.3 想要在将来的每个子组件中的方法中均可以使用 this.$http去调用其方法执行ajax请求
 //就要将axios对象挂载到vue的原型属性$http上
