@@ -33,7 +33,7 @@
             <yd-slider autoplay="4000" :loop="isTure" speed="600">
                 <yd-slider-item v-for="(item,index) in gImg" :key="index">
                     <a href="http://www.ydcss.com">
-                        <img :src="item.src">
+                        <img v-lazy="item.src">
                     </a>
                 </yd-slider-item>
             </yd-slider>
@@ -41,64 +41,10 @@
         <!--导航栏-->
         <nav class="nav-list nav-col05-list">
             <ul>
-                <li>
+                <li v-for="(item,index) in navImg" :key="index">
                     <a href="javascript:;">
-                        <img class="" alt="分类" src="http://68dsw.oss-cn-beijing.aliyuncs.com/images/site/1/images/2016/11/01/14779906782122.png?x-oss-process=image/format,webp/quality,q_75">
-                        <span>分类</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="javascript:;">
-                        <img class="" alt="分类" src="http://68dsw.oss-cn-beijing.aliyuncs.com/images/site/1/images/2016/11/01/14779906782122.png?x-oss-process=image/format,webp/quality,q_75">
-                        <span>分类</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="javascript:;">
-                        <img class="" alt="分类" src="http://68dsw.oss-cn-beijing.aliyuncs.com/images/site/1/images/2016/11/01/14779906782122.png?x-oss-process=image/format,webp/quality,q_75">
-                        <span>分类</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="javascript:;">
-                        <img class="" alt="分类" src="http://68dsw.oss-cn-beijing.aliyuncs.com/images/site/1/images/2016/11/01/14779906782122.png?x-oss-process=image/format,webp/quality,q_75">
-                        <span>分类</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="javascript:;">
-                        <img class="" alt="分类" src="http://68dsw.oss-cn-beijing.aliyuncs.com/images/site/1/images/2016/11/01/14779906782122.png?x-oss-process=image/format,webp/quality,q_75">
-                        <span>分类</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="javascript:;">
-                        <img class="" alt="分类" src="http://68dsw.oss-cn-beijing.aliyuncs.com/images/site/1/images/2016/11/01/14779906782122.png?x-oss-process=image/format,webp/quality,q_75">
-                        <span>分类</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="javascript:;">
-                        <img class="" alt="分类" src="http://68dsw.oss-cn-beijing.aliyuncs.com/images/site/1/images/2016/11/01/14779906782122.png?x-oss-process=image/format,webp/quality,q_75">
-                        <span>分类</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="javascript:;">
-                        <img class="" alt="分类" src="http://68dsw.oss-cn-beijing.aliyuncs.com/images/site/1/images/2016/11/01/14779906782122.png?x-oss-process=image/format,webp/quality,q_75">
-                        <span>分类</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="javascript:;">
-                        <img class="" alt="分类" src="http://68dsw.oss-cn-beijing.aliyuncs.com/images/site/1/images/2016/11/01/14779906782122.png?x-oss-process=image/format,webp/quality,q_75">
-                        <span>分类</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="javascript:;">
-                        <img class="" alt="分类" src="http://68dsw.oss-cn-beijing.aliyuncs.com/images/site/1/images/2016/11/01/14779906782122.png?x-oss-process=image/format,webp/quality,q_75">
-                        <span>分类</span>
+                        <img class="" alt="item.title" v-lazy="item.src">
+                        <span>{{item.title}}</span>
                     </a>
                 </li>
             </ul>
@@ -112,8 +58,14 @@
                 </a>
 
             </div>
-
-            <ul style="top: -60px;">
+            
+    <yd-rollnotice autoplay="3000" style="position: absolute;left: 95px;top: 0px; overflow: hidden;">
+        <yd-rollnotice-item><span style="color:#F00;"> 荐 </span>荣耀V9 3月超级钜惠！</yd-rollnotice-item>
+        <yd-rollnotice-item><span> 荐 </span>3.23京东超级品牌日格力盛典</yd-rollnotice-item>
+        <yd-rollnotice-item><span> 荐 </span>京东服饰 早春新品低至7折</yd-rollnotice-item>
+        <yd-rollnotice-item><span> 荐 </span>京东服饰 早春新品低至7折111</yd-rollnotice-item>
+    </yd-rollnotice>
+            <!--<ul style="top: -60px;">
                 <li>
                     <div class="hot-message">
 
@@ -132,7 +84,9 @@
                     </div>
                 </li>
 
-            </ul>
+            </ul>-->
+
+
         </div>
         <!--商城热点-->
 
@@ -147,44 +101,9 @@
         <!--必抢内容区域-->
         <div class="box1">
             <ul>
-                <li>
+                <li v-for="(item,index) in BQimg" :key="index">
                     <a href="javascript:;">
-                        <img src="http://68dsw.oss-cn-beijing.aliyuncs.com/images/site/1/gallery/2016/09/29/14751148069497.jpg?x-oss-process=image/format,webp/quality,q_75" alt="">
-                    </a>
-                </li>
-                <li>
-                    <a href="javascript:;">
-                        <img src="http://68dsw.oss-cn-beijing.aliyuncs.com/images/site/1/gallery/2016/09/29/14751148069497.jpg?x-oss-process=image/format,webp/quality,q_75" alt="">
-                    </a>
-                </li>
-                <li>
-                    <a href="javascript:;">
-                        <img src="http://68dsw.oss-cn-beijing.aliyuncs.com/images/site/1/gallery/2016/09/29/14751148069497.jpg?x-oss-process=image/format,webp/quality,q_75" alt="">
-                    </a>
-                </li>
-                <li>
-                    <a href="javascript:;">
-                        <img src="http://68dsw.oss-cn-beijing.aliyuncs.com/images/site/1/gallery/2016/09/29/14751148069497.jpg?x-oss-process=image/format,webp/quality,q_75" alt="">
-                    </a>
-                </li>
-                <li>
-                    <a href="javascript:;">
-                        <img src="http://68dsw.oss-cn-beijing.aliyuncs.com/images/site/1/gallery/2016/09/29/14751148069497.jpg?x-oss-process=image/format,webp/quality,q_75" alt="">
-                    </a>
-                </li>
-                <li>
-                    <a href="javascript:;">
-                        <img src="http://68dsw.oss-cn-beijing.aliyuncs.com/images/site/1/gallery/2016/09/29/14751148069497.jpg?x-oss-process=image/format,webp/quality,q_75" alt="">
-                    </a>
-                </li>
-                <li>
-                    <a href="javascript:;">
-                        <img src="http://68dsw.oss-cn-beijing.aliyuncs.com/images/site/1/gallery/2016/09/29/14751148069497.jpg?x-oss-process=image/format,webp/quality,q_75" alt="">
-                    </a>
-                </li>
-                <li>
-                    <a href="javascript:;">
-                        <img src="http://68dsw.oss-cn-beijing.aliyuncs.com/images/site/1/gallery/2016/09/29/14751148069497.jpg?x-oss-process=image/format,webp/quality,q_75" alt="">
+                        <img alt="" v-lazy="item.src">
                     </a>
                 </li>
             </ul>
@@ -201,19 +120,9 @@
         <!--品牌资讯内容区域-->
         <div class="box1 box2">
             <ul>
-                <li>
+                <li v-for="(item,index) in PPimg" :key="index">
                     <a href="javascript:;">
-                        <img src="http://68dsw.oss-cn-beijing.aliyuncs.com/images/site/1/gallery/2016/09/29/14751158329813.png?x-oss-process=image/format,webp/quality,q_75" alt="">
-                    </a>
-                </li>
-                <li>
-                    <a href="javascript:;">
-                        <img src="http://68dsw.oss-cn-beijing.aliyuncs.com/images/site/1/gallery/2016/09/29/14751158329813.png?x-oss-process=image/format,webp/quality,q_75" alt="">
-                    </a>
-                </li>
-                <li>
-                    <a href="javascript:;">
-                        <img src="http://68dsw.oss-cn-beijing.aliyuncs.com/images/site/1/gallery/2016/09/29/14751158329813.png?x-oss-process=image/format,webp/quality,q_75" alt="">
+                        <img v-lazy="item.src" alt="">
                     </a>
                 </li>
             </ul>
@@ -236,7 +145,7 @@
                     </a>
                 </dt>
                 <dd>
-                    <span>
+                    <span class="span1">
                         <a href="javascript:;">
                             <img src="http://68dsw.oss-cn-beijing.aliyuncs.com/images/site/1/gallery/2016/09/29/14751183837262.png?x-oss-process=image/format,webp/quality,q_75" alt="">
                         </a>
@@ -270,24 +179,9 @@
         <!--精选市场内容区域-->
         <div class="box1 box4">
             <ul>
-                <li>
+                <li v-for="(item,index) in market1img" :key="index">
                     <a href="javascript:;">
-                        <img src="http://68dsw.oss-cn-beijing.aliyuncs.com/images/site/1/gallery/2016/09/29/14751173863202.png?x-oss-process=image/format,webp/quality,q_75" alt="">
-                    </a>
-                </li>
-                <li>
-                    <a href="javascript:;">
-                        <img src="http://68dsw.oss-cn-beijing.aliyuncs.com/images/site/1/gallery/2016/09/29/14751173863202.png?x-oss-process=image/format,webp/quality,q_75" alt="">
-                    </a>
-                </li>
-                <li>
-                    <a href="javascript:;">
-                        <img src="http://68dsw.oss-cn-beijing.aliyuncs.com/images/site/1/gallery/2016/09/29/14751173863202.png?x-oss-process=image/format,webp/quality,q_75" alt="">
-                    </a>
-                </li>
-                <li>
-                    <a href="javascript:;">
-                        <img src="http://68dsw.oss-cn-beijing.aliyuncs.com/images/site/1/gallery/2016/09/29/14751173863202.png?x-oss-process=image/format,webp/quality,q_75" alt="">
+                        <img v-lazy="item.src" alt="">
                     </a>
                 </li>
             </ul>
@@ -295,14 +189,9 @@
         <!--精选市场内容区域2-->
         <div class="box1 box5">
             <ul>
-                <li>
+                <li v-for="(item,index) in market2img" :key="index">
                     <a href="javascript:;">
-                        <img src="http://68dsw.oss-cn-beijing.aliyuncs.com/images/site/1/gallery/2016/09/29/14751183837262.png?x-oss-process=image/format,webp/quality,q_75" alt="">
-                    </a>
-                </li>
-                <li>
-                    <a href="javascript:;">
-                        <img src="http://68dsw.oss-cn-beijing.aliyuncs.com/images/site/1/gallery/2016/09/29/14751183837262.png?x-oss-process=image/format,webp/quality,q_75" alt="">
+                        <img alt="" v-lazy="item.src">
                     </a>
                 </li>
             </ul>
@@ -386,7 +275,7 @@
         <!--精挑细选内容区域-->
         <div class="selects">
             <div class="selects-content clearfix">
-                <ul>
+                <ul v-for="(item,index) in chooseimg" :key="index">
                     <li>
                         <div class="goods-info">
                             <div class="item-tag-box">
@@ -395,77 +284,14 @@
                             </div>
                             <div class="goods-pic">
                                 <a href="javascript:;" title="" style="display: block">
-                                    <img class="" src="http://68dsw.oss-cn-beijing.aliyuncs.com/images/shop/7/gallery/2017/11/27/15117439434194.jpg?x-oss-process=image/resize,m_pad,limit_0,h_320,w_320/format,webp/quality,q_75" style="display: block;">
+                                    <img class=""  style="display: block;" v-lazy="item.src">
                                 </a>
                             </div>
                             <div class="goods-name">
-                                <a href="javascript:;" title="">批发秋冬季显瘦过膝长靴瘦腿弹力靴尖头女高跟长筒靴</a>
+                                <a href="javascript:;" title="item.title">{{item.title}}</a>
                             </div>
                             <div class="price price-color">
-                                <span>￥256.00</span>
-                            </div>
-                        </div>
-                    </li>
-                </ul>
-                <ul>
-                    <li>
-                        <div class="goods-info">
-                            <div class="item-tag-box">
-                                <!---->
-                                <!---->
-                            </div>
-                            <div class="goods-pic">
-                                <a href="javascript:;" title="" style="display: block">
-                                    <img class="" src="http://68dsw.oss-cn-beijing.aliyuncs.com/images/taobao-yun-images/552928117909/TB2CiOwwyRnpuFjSZFCXXX2DXXa_!!150138216.jpg?x-oss-process=image/resize,m_pad,limit_0,h_320,w_320/format,webp/quality,q_75" style="display: block;">
-                                </a>
-                            </div>
-                            <div class="goods-name">
-                                <a href="javascript:;" title="">批发秋冬季显瘦过膝长靴瘦腿弹力靴尖头女高跟长筒靴</a>
-                            </div>
-                            <div class="price price-color">
-                                <span>￥256.00</span>
-                            </div>
-                        </div>
-                    </li>
-                </ul>
-                <ul>
-                    <li>
-                        <div class="goods-info">
-                            <div class="item-tag-box">
-                                <!---->
-                                <!---->
-                            </div>
-                            <div class="goods-pic">
-                                <a href="javascript:;" title="" style="display: block">
-                                    <img class="" src="http://68dsw.oss-cn-beijing.aliyuncs.com/images/shop/7/gallery/2017/11/27/15117439434194.jpg?x-oss-process=image/resize,m_pad,limit_0,h_320,w_320/format,webp/quality,q_75" style="display: block;">
-                                </a>
-                            </div>
-                            <div class="goods-name">
-                                <a href="javascript:;" title="">批发秋冬季显瘦过膝长靴瘦腿弹力靴尖头女高跟长筒靴</a>
-                            </div>
-                            <div class="price price-color">
-                                <span>￥256.00</span>
-                            </div>
-                        </div>
-                    </li>
-                </ul>
-                <ul>
-                    <li>
-                        <div class="goods-info">
-                            <div class="item-tag-box">
-                                <!---->
-                                <!---->
-                            </div>
-                            <div class="goods-pic">
-                                <a href="javascript:;" title="" style="display: block">
-                                    <img class="" src="http://68dsw.oss-cn-beijing.aliyuncs.com/images/shop/7/gallery/2017/11/27/15117439434194.jpg?x-oss-process=image/resize,m_pad,limit_0,h_320,w_320/format,webp/quality,q_75" style="display: block;">
-                                </a>
-                            </div>
-                            <div class="goods-name">
-                                <a href="javascript:;" title="">批发秋冬季显瘦过膝长靴瘦腿弹力靴尖头女高跟长筒靴</a>
-                            </div>
-                            <div class="price price-color">
-                                <span>￥256.00</span>
+                                <span>￥{{item.price}}</span>
                             </div>
                         </div>
                     </li>
@@ -529,10 +355,15 @@
 
 <script>
 import Vue from 'vue';
+// 轮播图
 import { Slider, SliderItem } from 'vue-ydui/dist/lib.rem/slider';
-
 Vue.component(Slider.name, Slider);
 Vue.component(SliderItem.name, SliderItem);
+
+//滚动公告
+import {RollNotice, RollNoticeItem} from 'vue-ydui/dist/lib.rem/rollnotice';
+Vue.component(RollNotice.name, RollNotice);
+Vue.component(RollNoticeItem.name, RollNoticeItem);
 
 export default {
 
@@ -543,6 +374,12 @@ export default {
             hello: "我是hello",
             isTure: false,
             gImg:[],
+            navImg:[],
+            BQimg:[],
+            PPimg:[],
+            market1img:[],
+            market2img:[],
+            chooseimg:[],
         }
     },
     methods: {
@@ -555,8 +392,27 @@ export default {
 
                     // 赋值
                     this.gImg = res.data.lbtImg;
-                    console.log(1111111111);
-                    console.log(this.gImg);
+                });
+            },
+            //获取nav图片
+            getNavImg(){
+                var date=new Date();
+                var timer=date.getTime().toString();
+                this.$http.get('/src/json/navImg.json?t='+timer).then(res => {
+                    // 判断状态提示
+
+                    // 赋值
+                    this.navImg = res.data.navImg;
+                    //获取必抢内容图片
+                    this.BQimg=res.data.BQimg;
+                    //品牌图片
+                    this.PPimg=res.data.PPimg;
+                    //精选市场1图片
+                    this.market1img=res.data.market1img;
+                    //精选市场2图片
+                    this.market2img=res.data.market2img;
+                    //精挑细选
+                    this.chooseimg=res.data.chooseimg;
                 });
             },
     },
@@ -565,6 +421,7 @@ export default {
     },
     created(){
         this.getgLbtImg();
+        this.getNavImg();
     },
 }
 

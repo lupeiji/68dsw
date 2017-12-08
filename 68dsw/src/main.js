@@ -54,6 +54,15 @@ Vue.use(vuex);
 // 注意：按需引入单个组件，另需导入重置基础样式；即在 main.js 或根组件执行 
 import 'vue-ydui/dist/ydui.base.css';
 
+import VueLazyload from 'vue-lazyload'  //引入这个懒加载插件
+// 添加VueLazyload 选项
+Vue.use(VueLazyload, {
+  preLoad: 1.3,
+  error: 'dist/error.png',
+  loading: 'dist/loading.gif',
+  attempt: 1
+})
+
 new Vue({
     el:'#app',
     // 使用app这个组件对象

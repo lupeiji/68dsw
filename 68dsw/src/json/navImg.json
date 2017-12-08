@@ -1,0 +1,46 @@
+{
+"navImg": [
+
+{ "src":"../../../statics/images/nav1.png","title":"分类" },
+{ "src":"../../../statics/images/nav2.png","title":"清单"},
+{ "src":"../../../statics/images/nav3.png","title":"团购"},
+{ "src":"../../../statics/images/nav1.png","title":"分类" },
+{ "src":"../../../statics/images/nav2.png","title":"清单"},
+{ "src":"../../../statics/images/nav3.png","title":"团购"},
+{ "src":"../../../statics/images/nav1.png","title":"分类" },
+{ "src":"../../../statics/images/nav2.png","title":"清单"},
+{ "src":"../../../statics/images/nav3.png","title":"团购"},
+{ "src":"../../../statics/images/nav3.png","title":"团购"}
+],
+"BQimg":[
+    {"src":"../../../statics/images/bq1.jpg"},
+    {"src":"../../../statics/images/bq2.jpg"},
+    {"src":"../../../statics/images/bq1.jpg"},
+    {"src":"../../../statics/images/bq2.jpg"},
+    {"src":"../../../statics/images/bq1.jpg"},
+    {"src":"../../../statics/images/bq2.jpg"},
+    {"src":"../../../statics/images/bq1.jpg"},
+    {"src":"../../../statics/images/bq2.jpg"}
+],
+"PPimg":[
+    {"src":"../../../statics/images/pp1.png"},
+    {"src":"../../../statics/images/pp2.png"},
+    {"src":"../../../statics/images/pp1.png"}
+],
+"market1img":[
+    {"src":"../../../statics/images/market1.png"},
+    {"src":"../../../statics/images/market1.png"},
+    {"src":"../../../statics/images/market1.png"},
+    {"src":"../../../statics/images/market1.png"}
+],
+"market2img":[
+    {"src":"../../../statics/images/market2.png"},
+    {"src":"../../../statics/images/market2.png"}
+],
+"chooseimg":[
+    {"src":"../../../statics/images/market2.png","title":"正品振兴CL8804手提储物箱整理箱塑料箱杂物收纳箱居家收纳箱包邮","price":26.20},
+    {"src":"../../../statics/images/market2.png","title":"正品振兴CL8804手提储物箱整理箱塑料箱杂物收纳箱居家收纳箱包邮","price":126.20},
+    {"src":"../../../statics/images/market2.png","title":"正品振兴CL8804手提储物箱整理箱塑料箱杂物收纳箱居家收纳箱包邮","price":226.20},
+    {"src":"../../../statics/images/market2.png","title":"正品振兴CL8804手提储物箱整理箱塑料箱杂物收纳箱居家收纳箱包邮","price":326.20}
+]
+}
