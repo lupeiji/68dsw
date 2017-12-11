@@ -6,7 +6,7 @@
             <div class="header">
                 <div class="header-content">
                     <div class="SZY-SUBSITE">
-                        <a class="city" href="/subsite/change.html">秦皇岛站</a>
+                        <a class="city" href="javascript:;">秦皇岛站</a>
                     </div>
                     <div class="box-search current">
                         <a class="react" href="javascript:void(0)">
@@ -16,7 +16,7 @@
                     </div>
                     <div class="nav-wap-right">
                         <div class="qrcode SZY-SCANQRCODE-RIGHT"></div>
-                        <a href="/user/message/internal.html">
+                        <a href="javascript:;">
                             <em class="top-right">
                                 <i class="message-num SZY-INTERNAL-COUNT">0</i>
                             </em>
@@ -32,7 +32,7 @@
         <div class="lbt">
             <yd-slider autoplay="4000" :loop="isTure" speed="600">
                 <yd-slider-item v-for="(item,index) in gImg" :key="index">
-                    <a href="http://www.ydcss.com">
+                    <a href="javascript:;">
                         <img v-lazy="item.src">
                     </a>
                 </yd-slider-item>
@@ -51,20 +51,36 @@
 
         </nav>
         <!--商城热点-->
-        <div class="hot" style="position: relative; overflow: hidden;">
+<div class="shop-notice-con">
+		<div class="notice-img">
+			
+			<img src="../../../statics/images/sc-news-tit.png" alt="商城公告">
+			
+			
+		</div>
+    <yd-rollnotice autoplay="3000" height="40" style="position: absolute;left: 95px;top: 0px; overflow: hidden;">
+        <yd-rollnotice-item><span style="color:#F00;"> 荐 </span>荣耀V9 3月超级钜惠！</yd-rollnotice-item>
+        <yd-rollnotice-item><span> 荐 </span>3.23京东超级品牌日格力盛典</yd-rollnotice-item>
+        <yd-rollnotice-item><span> 荐 </span>京东服饰 早春新品低至7折</yd-rollnotice-item>
+        <yd-rollnotice-item><span> 荐 </span>京东服饰 早春新品低至7折111</yd-rollnotice-item>
+    </yd-rollnotice>	
+
+	</div>
+        <!--商城热点-->
+        <!--<div class="hot" style="position: relative; overflow: hidden;">
             <div class="notice-img">
                 <a href="http://www.qq.com">
                     <img class="" src="http://68dsw.oss-cn-beijing.aliyuncs.com/images/site/1/gallery/2016/11/01/14779907765766.png?x-oss-process=image/format,webp/quality,q_75" style="display: block;">
                 </a>
 
-            </div>
+            </div>-->
             
-    <yd-rollnotice autoplay="3000" style="position: absolute;left: 95px;top: 0px; overflow: hidden;">
+    <!--<yd-rollnotice autoplay="3000" style="position: absolute;left: 95px;top: 0px; overflow: hidden;">
         <yd-rollnotice-item><span style="color:#F00;"> 荐 </span>荣耀V9 3月超级钜惠！</yd-rollnotice-item>
         <yd-rollnotice-item><span> 荐 </span>3.23京东超级品牌日格力盛典</yd-rollnotice-item>
         <yd-rollnotice-item><span> 荐 </span>京东服饰 早春新品低至7折</yd-rollnotice-item>
         <yd-rollnotice-item><span> 荐 </span>京东服饰 早春新品低至7折111</yd-rollnotice-item>
-    </yd-rollnotice>
+    </yd-rollnotice>-->
             <!--<ul style="top: -60px;">
                 <li>
                     <div class="hot-message">
@@ -87,7 +103,7 @@
             </ul>-->
 
 
-        </div>
+        <!--</div>-->
         <!--商城热点-->
 
         <!--xiao标题 必抢-->
@@ -312,17 +328,23 @@
         <div class="footer-nav">
             <ul>
                 <li class="current">
-                    <a href="/index.html">
+                    <!--<a href="/index.html">-->
+                    <router-link to="/site/index">
+                    
                         <i style="background: url(http://68dsw.oss-cn-beijing.aliyuncs.com/images/backend/1/images/2017/03/01/14883532969138.png);background-size: contain;"></i>
                         <span class="footer-span-color">首页</span>
-                    </a>
+                    </router-link> 
                 </li>
 
                 <li class="">
-                    <a href="/category.html">
+                    <!--<a href="/category.html">
                         <i style="background: url(http://68dsw.oss-cn-beijing.aliyuncs.com/images/backend/1/images/2017/03/01/14883532462342.png);background-size: contain;"></i>
                         <span>分类</span>
-                    </a>
+                    </a>-->
+                    <router-link to="/site/category">
+                        <i style="background: url(http://68dsw.oss-cn-beijing.aliyuncs.com/images/backend/1/images/2017/03/01/14883532462342.png);background-size: contain;"></i>
+                        <span>分类</span>
+                    </router-link> 
                 </li>
 
                 <li class="">

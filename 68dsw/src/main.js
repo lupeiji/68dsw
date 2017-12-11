@@ -15,12 +15,14 @@ Vue.use(vueRouter);
 // 1.0.3 定义路由规则
 // import   from ' ';
 import index from './components/site/index.vue';
+import category from './components/site/category.vue';
 
 var router = new vueRouter({
     routes:[
-        {name:'default',path:'/',redirect:'/site'},
-        {name:'index',path:'/site',component:index,}
-
+        {name:'default',path:'/',redirect:'site'},
+        {name:'index',path:'/site',component:index},
+        {name:'index',path:'/site/index',component:index},
+        {name:'category',path:'/site/category',component:category},
     ]
 });
 
