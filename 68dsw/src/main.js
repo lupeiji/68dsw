@@ -2,7 +2,6 @@
 import Vue from 'vue';
 
 // 步骤2：想要解析和呈现App.vue组件的内容，则导入 App.vue组件
-// var App = require('./App.vue');
 import App from './App.vue';
 
 // 1.0 路由的写法
@@ -63,6 +62,27 @@ Vue.use(VueLazyload, {
   error: 'dist/error.png',
   loading: 'dist/loading.gif',
   attempt: 1
+})
+
+import VIscroll from 'viscroll';
+// 可以在use的时候设置iscroll的参数
+// Vue.use(VIscroll, {
+//     mouseWheel: true,
+//     click: false,
+//     preventDefault: true,
+//     tap: false,
+//     bounce: false,
+//     disableTouch: true
+// });
+Vue.use(VIscroll, {
+  mouseWheel: true,
+  click: false,
+  preventDefault: true,
+  tap: false,
+  bounce: false,
+  disableMouse: false,
+  disablePointer: true,
+  disableTouch: false
 })
 
 new Vue({
