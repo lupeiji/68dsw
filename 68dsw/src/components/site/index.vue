@@ -341,7 +341,7 @@
                         <i style="background: url(http://68dsw.oss-cn-beijing.aliyuncs.com/images/backend/1/images/2017/03/01/14883532462342.png);background-size: contain;"></i>
                         <span>分类</span>
                     </a>-->
-                    <router-link to="/site/category">
+                    <router-link to="/site/category1">
                         <i style="background: url(http://68dsw.oss-cn-beijing.aliyuncs.com/images/backend/1/images/2017/03/01/14883532462342.png);background-size: contain;"></i>
                         <span>分类</span>
                     </router-link> 
@@ -449,7 +449,7 @@ export default {
 
 </script>
 
-<style lang="less">
+<style lang="less" scoped>
 /* 导入样式的格式  @import url() */
 
 @import url('../../../statics/css/base.css');

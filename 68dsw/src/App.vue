@@ -22,5 +22,7 @@ export default{
 </script>
 
 <style>
-    
+    .tmpl{
+        height: 100%;
+    }
 </style>

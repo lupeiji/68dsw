@@ -14,14 +14,15 @@ Vue.use(vueRouter);
 // 1.0.3 定义路由规则
 // import   from ' ';
 import index from './components/site/index.vue';
-import category from './components/site/category.vue';
-
+// import category from './components/site/category.vue';
+import category1 from './components/site/category1.vue';
 var router = new vueRouter({
     routes:[
         {name:'default',path:'/',redirect:'site'},
         {name:'index',path:'/site',component:index},
-        {name:'index',path:'/site/index',component:index},
-        {name:'category',path:'/site/category',component:category},
+        // {name:'index',path:'/site/index',component:index},
+        // {name:'category',path:'/site/category',component:category},
+        {name:'category1',path:'/site/category1',component:category1},
     ]
 });
 
@@ -79,7 +80,7 @@ Vue.use(VIscroll, {
   click: false,
   preventDefault: true,
   tap: false,
-  bounce: false,
+  bounce: true,
   disableMouse: false,
   disablePointer: true,
   disableTouch: false
