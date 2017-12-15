@@ -29,18 +29,18 @@ var router = new vueRouter({
 // 2.0 axios的使用
 // 2.0.1 导入axios包
 import axios from 'axios';
-// 2.0.2 设定axios的基本的url请求前缀
-// axios.defaults.baseURL = '';
+// 设定axios的基本的url请求前缀
+// axios.defaults.baseURL = 'http://192.168.1.116:8001';
 
 // 2.0.3 想要在将来的每个子组件中的方法中均可以使用 this.$http去调用其方法执行ajax请求
 //就要将axios对象挂载到vue的原型属性$http上
 Vue.prototype.$http = axios;
 
 // 设定axios的参数使得axios发出的ajax请求能够自动带上cookie
-axios.defaults.withCredentials = true;
+// axios.defaults.withCredentials = true;
 
 // 2.0.4 绑定到vue上
-Vue.use(axios);
+// Vue.use(axios);
 
 // 导入整个网站布局的控制样式
 // import '../statics/site/css/style.css';

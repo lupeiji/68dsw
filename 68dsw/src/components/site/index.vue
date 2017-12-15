@@ -66,45 +66,6 @@
     </yd-rollnotice>	
 
 	</div>
-        <!--商城热点-->
-        <!--<div class="hot" style="position: relative; overflow: hidden;">
-            <div class="notice-img">
-                <a href="http://www.qq.com">
-                    <img class="" src="http://68dsw.oss-cn-beijing.aliyuncs.com/images/site/1/gallery/2016/11/01/14779907765766.png?x-oss-process=image/format,webp/quality,q_75" style="display: block;">
-                </a>
-
-            </div>-->
-            
-    <!--<yd-rollnotice autoplay="3000" style="position: absolute;left: 95px;top: 0px; overflow: hidden;">
-        <yd-rollnotice-item><span style="color:#F00;"> 荐 </span>荣耀V9 3月超级钜惠！</yd-rollnotice-item>
-        <yd-rollnotice-item><span> 荐 </span>3.23京东超级品牌日格力盛典</yd-rollnotice-item>
-        <yd-rollnotice-item><span> 荐 </span>京东服饰 早春新品低至7折</yd-rollnotice-item>
-        <yd-rollnotice-item><span> 荐 </span>京东服饰 早春新品低至7折111</yd-rollnotice-item>
-    </yd-rollnotice>-->
-            <!--<ul style="top: -60px;">
-                <li>
-                    <div class="hot-message">
-
-                        <a href="http://www.68dsw.com/article/list?aid=30,29,28,22" title="批发市场已正式上线">批发市场已正式上线</a>
-                        <a href="http://www.68dsw.com/article/list?aid=30,29,28,22" title="产品库功能更新中">产品库功能更新中</a>
-
-                    </div>
-                </li>
-
-                <li>
-                    <div class="hot-message">
-
-                        <a href="http://www.68dsw.com/article/list?aid=30,29,28,22">欢迎优质商家入驻开启零售新篇章</a>
-                        <a href="http://www.68dsw.com/article/list?aid=30,29,28,22" title="入驻小帮手">入驻小帮手</a>
-
-                    </div>
-                </li>
-
-            </ul>-->
-
-
-        <!--</div>-->
-        <!--商城热点-->
 
         <!--xiao标题 必抢-->
         <h2 class="litle_title">
@@ -295,8 +256,7 @@
                     <li>
                         <div class="goods-info">
                             <div class="item-tag-box">
-                                <!---->
-                                <!---->
+
                             </div>
                             <div class="goods-pic">
                                 <a href="javascript:;" title="" style="display: block">
@@ -312,10 +272,36 @@
                         </div>
                     </li>
                 </ul>
+                <!--<yd-infinitescroll :callback="loadList" ref="infinitescrollDemo">
+
+                    <yd-list theme="1" slot="list">
+                            <ul v-for="(item,index) in chooseimg" :key="index">
+                                <li>
+                                    <div class="goods-info">
+                                        <div class="item-tag-box">
+
+                                        </div>
+                                        <div class="goods-pic">
+                                            <a href="javascript:;" title="" style="display: block">
+                                                <img class=""  style="display: block;" v-lazy="item.src">
+                                            </a>
+                                        </div>
+                                        <div class="goods-name">
+                                            <a href="javascript:;" title="item.title">{{item.title}}</a>
+                                        </div>
+                                        <div class="price price-color">
+                                            <span>￥{{item.price}}</span>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                    </yd-list>
+
+                </yd-infinitescroll>-->
             </div>
         </div>
         <!--附近店铺-->
-        <div class="nearby-shops-box">
+        <div class="nearby-shops-box" v-if="isShop">
             <div class="shop-loading-con">
                 <img src="../../../statics/images/shop_loading_icon.png">
                 <div class="shop-loading-text">1000公里范围没有找到相关店铺</div>
@@ -387,6 +373,10 @@ import {RollNotice, RollNoticeItem} from 'vue-ydui/dist/lib.rem/rollnotice';
 Vue.component(RollNotice.name, RollNotice);
 Vue.component(RollNoticeItem.name, RollNoticeItem);
 
+// 滚动加载
+import {InfiniteScroll} from 'vue-ydui/dist/lib.rem/infinitescroll';
+Vue.component(InfiniteScroll.name, InfiniteScroll);
+
 export default {
 
     data() {
@@ -395,6 +385,7 @@ export default {
             // buycount:0
             hello: "我是hello",
             isTure: false,
+            isShop:false,
             gImg:[],
             navImg:[],
             BQimg:[],
@@ -402,18 +393,23 @@ export default {
             market1img:[],
             market2img:[],
             chooseimg:[],
+            page: 1,
+            pageSize: 10,
         }
     },
     methods: {
             // 获取lbt
             getgLbtImg() {
-                var date=new Date();
-                var timer=date.getTime().toString();
-                this.$http.get('/src/json/img.json?t='+timer).then(res => {
-                    // 判断状态提示
 
-                    // 赋值
-                    this.gImg = res.data.lbtImg;
+                console.log(1111);
+                this.$http.get("http://192.168.1.116:8081/m/api/index/poster/0").then((res) => {
+                    // if(res.state!=1){
+                    //     return;
+                    // }
+                    // this.gImg
+                    console.log(res.data.data.slideshows);
+                    this.gImg=res.data.data.slideshows;
+
                 });
             },
             //获取nav图片
@@ -436,7 +432,7 @@ export default {
                     //精挑细选
                     this.chooseimg=res.data.chooseimg;
                 });
-            },
+            }
     },
     mounted() {
 

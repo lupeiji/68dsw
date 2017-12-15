@@ -52,7 +52,7 @@
         <!--分类页面的头部-->
         <div class="container">
             <!--左侧-->
-            <div class="left_box">
+            <div class="left_box" v-iscroll>
                 <ul class="left_menu">
                     <li class="cur">
                         <a href="javascript:;">生鲜食品</a>
@@ -344,7 +344,9 @@
 import { my_scroll } from "../../leftEvent/ulMove.js";
 // document.addEventListener("touchmove", function(e){ e.preventDefault(); }, false);
 // var myScroll = new IScroll('.category-right');
-
+// document.querySelector('.left_box').addEventListener('touchstart', function (e) {
+//     e.preventDefault();
+// });
 export default {
     data() {
         return {

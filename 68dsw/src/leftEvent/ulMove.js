@@ -11,8 +11,8 @@ export function my_scroll() {
   var preDistance = 0;
   // 弹簧
   var springs = 50;
-  console.log(123);
-   console.log(ul.offsetHeight);
+  // console.log(123);
+  //  console.log(ul.offsetHeight);
   // 往上拖动最大的距离 (没有包括弹簧) 往上滑动的距离是负数
   var maxUp = -(ul.offsetHeight - ul.parentNode.offsetHeight);
   // console.log(maxUp);
@@ -101,8 +101,10 @@ export function my_scroll() {
     }
 
     // 获取要往上移动的总距离
+   
     var totalUp = -(index * targetLi.offsetHeight);
-
+      console.log(totalUp);
+      console.log(maxUp);
     //  添加上滚动的限制 maxup
     if(totalUp<maxUp){
       totalUp=maxUp;
